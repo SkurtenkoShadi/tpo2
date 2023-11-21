@@ -2,15 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "myfunc.h"
-
-int myfunc(int b) {
-    char *buffer = malloc(sizeof(char) * 1000);
-    buffer [0] = b + 4;
-    // здесь должен ругаться sonarcloud, т.к. утечка памяти
-    return buffer[0];
-}
-
-int val;
+#include <math.h> 
 
 int fibonachi(int num) {
     int prev = 1;
@@ -32,7 +24,27 @@ int fibonachi(int num) {
     return next;
 }
 
-void printStdoutMessages() {
-    printf("This is a test message from myfunc.c\n");
-    printf("Do not disturb\n");
+void my_sqrt(double* res, double a, double b, double c)
+{
+    double d, x1, x2;
+    d = b * b - 4 * a * c; 
+    if (d > 0) 
+    {
+        x1 = ((-b) + sqrt(d)) / (2 * a);
+        x2 = ((-b) - sqrt(d)) / (2 * a);
+        res[0] = x1;
+        res[1] = x2;
+    }
+    else if (d == 0) 
+    {
+        x1 = -(b / (2 * a));
+        res[0] = x1;
+        res[1] = NAN;
+    }
+    else 
+    {
+        res[0] = NAN;
+        res[1] = NAN;
+    }
+
 }

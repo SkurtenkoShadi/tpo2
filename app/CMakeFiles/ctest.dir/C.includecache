@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/02/skurtenk/tpo/ctest/app/main.c
+stdio.h
+-
+myfunc.h
+/home/02/skurtenk/tpo/ctest/app/myfunc.h
+stdlib.h
+-
+
+/home/02/skurtenk/tpo/ctest/app/myfunc.h
+

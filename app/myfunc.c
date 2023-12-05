@@ -27,24 +27,38 @@ int fibonachi(int num) {
 void my_sqrt(double* res, double a, double b, double c)
 {
     double d, x1, x2;
-    d = b * b - 4 * a * c; 
-    if (d > 0) 
+    if (a == 0 && b != 0)
     {
-        x1 = ((-b) + sqrt(d)) / (2 * a);
-        x2 = ((-b) - sqrt(d)) / (2 * a);
-        res[0] = x1;
-        res[1] = x2;
-    }
-    else if (d == 0) 
-    {
-        x1 = -(b / (2 * a));
+        x1 = -1*c/b;
         res[0] = x1;
         res[1] = NAN;
     }
-    else 
+    else if (a == 0 && b == 0)
     {
         res[0] = NAN;
         res[1] = NAN;
+    }
+    else
+    {
+        d = b * b - 4 * a * c;
+        if (d > 0)
+        {
+            x1 = ((-b) + sqrt(d)) / (2 * a);
+            x2 = ((-b) - sqrt(d)) / (2 * a);
+            res[0] = x1;
+            res[1] = x2;
+        }
+        else if (d == 0)
+        {
+            x1 = -(b / (2 * a));
+            res[0] = x1;
+            res[1] = NAN;
+        }
+        else
+        {
+            res[0] = NAN;
+            res[1] = NAN;
+        }
     }
 
 }

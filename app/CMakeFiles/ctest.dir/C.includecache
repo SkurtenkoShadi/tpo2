@@ -6,12 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/home/02/skurtenk/tpo/ctest/app/main.c
+/home/02/skurtenk/tpo/ctest/app/myfunc.c
 stdio.h
+-
+stdlib.h
 -
 myfunc.h
 /home/02/skurtenk/tpo/ctest/app/myfunc.h
-stdlib.h
+math.h
 -
 
 /home/02/skurtenk/tpo/ctest/app/myfunc.h

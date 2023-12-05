@@ -32,4 +32,18 @@ TEST(mysqrtTest, neg) {
     ASSERT_EQ(res[0], 3.00);
     ASSERT_TRUE(isnan(res[1]));
 }
+
+TEST(mysqrtTest, num2) {
+    double* res = (double*)malloc(2 * sizeof(double));
+    my_sqrt(res, 0, -1, 9);
+    ASSERT_EQ(res[0], 9.00);
+    ASSERT_TRUE(isnan(res[1]));
+}
+
+TEST(mysqrtTest, neg2) {
+    double* res = (double*)malloc(2 * sizeof(double));
+    my_sqrt(res, 0, 0, 9);
+    ASSERT_TRUE(isnan(res[0]));
+    ASSERT_TRUE(isnan(res[1]));
+}
 #endif 
